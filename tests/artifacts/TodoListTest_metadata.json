@@ -1,0 +1,104 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "beforeAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testAddTodo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testDeleteTodo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testGetTodo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testSetCompleted",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testSetPending",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/tests/todoListPending_test.sol": "TodoListTest"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/tests/todoListPending_test.sol": {
+			"keccak256": "0x244fa16cedc75a936cbb8a06c5cc34d4bfee3bdb2cedc6598b4b81bc77b0f7f8",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a71aff77e86c6767f3a62ed4b0f5712e81b40200f668d19260aef69186c9c54d",
+				"dweb:/ipfs/QmRXZdfMnRakw8syJKBogLogGYm9U5i8rxRQeCuZf4Z4FY"
+			]
+		},
+		"localhost/todoListPending.sol": {
+			"keccak256": "0xd1a0622a44869bf3a2ea96653d429ee1a70e7394c56424455082937668fcf4d1",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3bab137279fc6e5c56e961ef0a6aa3dc5709dd78ab84151e53323a961ec0c9a7",
+				"dweb:/ipfs/QmTTzykJYxKfJ4gmnp2MYGkuwJjM2ZFqffW6PvADJpgy6A"
+			]
+		},
+		"remix_tests.sol": {
+			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
+				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		}
+	},
+	"version": 1
+}

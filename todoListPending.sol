@@ -42,7 +42,12 @@ contract TodoList {
     }
 
     function deleteTodo(uint256 index) external {
-        delete todos[index];
+        //        delete todos[index];
+        for (uint256 i = index; i < todos.length - 1; i++) {
+            todos[i] = todos[i + 1];
+        }
+        delete todos[todos.length - 1];
+        todos.pop();
     }
 
     function getCompleted(uint256 index) external view returns (string memory) {

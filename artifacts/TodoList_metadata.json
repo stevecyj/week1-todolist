@@ -51,6 +51,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getAllPending",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getAllTodo",
 				"outputs": [
 					{
@@ -71,6 +84,25 @@
 					}
 				],
 				"name": "getCompleted",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getPending",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -117,11 +149,43 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "setPending",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
 				"name": "todoCompleted",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "todoPending",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -165,7 +229,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"todolist.sol": "TodoList"
+			"todoListPending.sol": "TodoList"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -179,12 +243,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"todolist.sol": {
-			"keccak256": "0xa329ce72f4287622a559186bfbd0b7f7119c894e8be868860389206ff7d7dd9d",
+		"todoListPending.sol": {
+			"keccak256": "0xd1a0622a44869bf3a2ea96653d429ee1a70e7394c56424455082937668fcf4d1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4c5c2eead34ad6acbac79197d4af67bd40ea49dfc3208e2b184e20f973ae564c",
-				"dweb:/ipfs/Qmdoe6SRtiiS6qfjb3GeAE6ZCpUtAAfMF8xe8FZHVcVMwE"
+				"bzz-raw://3bab137279fc6e5c56e961ef0a6aa3dc5709dd78ab84151e53323a961ec0c9a7",
+				"dweb:/ipfs/QmTTzykJYxKfJ4gmnp2MYGkuwJjM2ZFqffW6PvADJpgy6A"
 			]
 		}
 	},

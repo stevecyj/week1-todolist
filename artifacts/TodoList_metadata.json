@@ -24,6 +24,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "clearCompleted",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -244,11 +251,11 @@
 	},
 	"sources": {
 		"todoListPending.sol": {
-			"keccak256": "0xd1a0622a44869bf3a2ea96653d429ee1a70e7394c56424455082937668fcf4d1",
+			"keccak256": "0x086f6e269790e771acc4c0d6783ec67d8e871cc1d53c3274e04d1e1ca9445b81",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3bab137279fc6e5c56e961ef0a6aa3dc5709dd78ab84151e53323a961ec0c9a7",
-				"dweb:/ipfs/QmTTzykJYxKfJ4gmnp2MYGkuwJjM2ZFqffW6PvADJpgy6A"
+				"bzz-raw://c0bbedf8699f8461c6137dacc36b9b1ad80b2b88412303b64c2fa79d6a453763",
+				"dweb:/ipfs/QmauDeYUgTXAdqQRkbJ2852cEFfWWAhuzDvhgCNcLyjMVN"
 			]
 		}
 	},

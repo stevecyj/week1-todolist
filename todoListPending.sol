@@ -69,4 +69,8 @@ contract TodoList {
     function getAllPending() external view returns (string[] memory) {
         return todoPending;
     }
+
+    function clearCompleted() external {
+        delete todoCompleted;
+    }
 }

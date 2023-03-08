@@ -69,4 +69,16 @@ contract TodoListTest {
         Assert.equal(pending.length, expectedPending, "Should set todo as pending.");
         Assert.equal(todos.length, expectedTodos, "Should remove todo from todos.");
     }
+
+    function testClearCompleted() public {
+        //        TodoList todolist = new TodoList();
+        todoList.addTodo("test todo");
+        todoList.setCompleted(0);
+
+        todoList.clearCompleted();
+
+        string[] memory completed = todoList.getAllCompleted();
+
+        Assert.equal(completed.length, 0, "Completed array should be empty");
+    }
 }

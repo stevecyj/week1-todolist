@@ -14,7 +14,7 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "todo",
+						"name": "content",
 						"type": "string"
 					}
 				],
@@ -38,7 +38,20 @@
 						"type": "uint256"
 					}
 				],
-				"name": "deleteTodo",
+				"name": "clearPending",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteTodoByIndex",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -90,12 +103,25 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getCompleted",
+				"name": "getCompletedByIndex",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCompletedCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -109,12 +135,25 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getPending",
+				"name": "getPendingByIndex",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPendingCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -128,12 +167,38 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getTodo",
+				"name": "getTodoByIndex",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTodoCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "n",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -177,8 +242,18 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "content",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isPending",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -196,8 +271,18 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "content",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isPending",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -215,8 +300,18 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "content",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isPending",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -236,7 +331,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"todoListPending.sol": "TodoList"
+			"todoListPendingCountSeconds.sol": "TodoList"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -250,12 +345,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"todoListPending.sol": {
-			"keccak256": "0x086f6e269790e771acc4c0d6783ec67d8e871cc1d53c3274e04d1e1ca9445b81",
+		"todoListPendingCountSeconds.sol": {
+			"keccak256": "0x4831b88424954aa40894eecc472f65847dae590dc187cd4ad4e395632baf19af",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c0bbedf8699f8461c6137dacc36b9b1ad80b2b88412303b64c2fa79d6a453763",
-				"dweb:/ipfs/QmauDeYUgTXAdqQRkbJ2852cEFfWWAhuzDvhgCNcLyjMVN"
+				"bzz-raw://d28ea5ec147a6eac095a1af0e11852c17a283e4b3cb2ba225035e9cf36dff1ee",
+				"dweb:/ipfs/QmPxMRuE6bmG7vPzK7ZcH56QNNT4ppBML7sH41McQqDYQX"
 			]
 		}
 	},

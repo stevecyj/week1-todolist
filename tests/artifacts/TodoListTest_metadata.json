@@ -7,42 +7,28 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "beforeAll",
+				"name": "addTodoTest",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "testAddTodo",
+				"name": "beforeEach",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "testDeleteTodo",
+				"name": "setCompletedTest",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "testGetTodo",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testSetCompleted",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testSetPending",
+				"name": "setPendingTest",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -61,7 +47,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/tests/todoListPending_test.sol": "TodoListTest"
+			"tests/todoListPendingCountingSeconds_test.sol": "TodoListTest"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -75,28 +61,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/tests/todoListPending_test.sol": {
-			"keccak256": "0x244fa16cedc75a936cbb8a06c5cc34d4bfee3bdb2cedc6598b4b81bc77b0f7f8",
-			"license": "GPL-3.0",
-			"urls": [
-				"bzz-raw://a71aff77e86c6767f3a62ed4b0f5712e81b40200f668d19260aef69186c9c54d",
-				"dweb:/ipfs/QmRXZdfMnRakw8syJKBogLogGYm9U5i8rxRQeCuZf4Z4FY"
-			]
-		},
-		"localhost/todoListPending.sol": {
-			"keccak256": "0xd1a0622a44869bf3a2ea96653d429ee1a70e7394c56424455082937668fcf4d1",
-			"license": "GPL-3.0",
-			"urls": [
-				"bzz-raw://3bab137279fc6e5c56e961ef0a6aa3dc5709dd78ab84151e53323a961ec0c9a7",
-				"dweb:/ipfs/QmTTzykJYxKfJ4gmnp2MYGkuwJjM2ZFqffW6PvADJpgy6A"
-			]
-		},
 		"remix_tests.sol": {
 			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
 			"license": "GPL-3.0",
 			"urls": [
 				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
 				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		},
+		"tests/todoListPendingCountingSeconds_test.sol": {
+			"keccak256": "0x961387727f0a772cf560e81c71621d37014c7076642134a488ad903db1474c59",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://34211360f8cbd53d15c6973a0cc369c3e0897c79bc8bf71bf5c37649e382bd4c",
+				"dweb:/ipfs/QmT1EjXvtRL4Lv9Bd4GN1FHxcacfJ5r3JKsMV7pvdz9YKH"
+			]
+		},
+		"todoListPendingCountSeconds.sol": {
+			"keccak256": "0x4831b88424954aa40894eecc472f65847dae590dc187cd4ad4e395632baf19af",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d28ea5ec147a6eac095a1af0e11852c17a283e4b3cb2ba225035e9cf36dff1ee",
+				"dweb:/ipfs/QmPxMRuE6bmG7vPzK7ZcH56QNNT4ppBML7sH41McQqDYQX"
 			]
 		}
 	},

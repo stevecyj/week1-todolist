@@ -24,13 +24,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "clearCompleted",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -38,20 +31,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "clearPending",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "index",
-						"type": "uint256"
-					}
-				],
-				"name": "deleteTodoByIndex",
+				"name": "deleteTodo",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -103,25 +83,12 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getCompletedByIndex",
+				"name": "getCompleted",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getCompletedCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -135,25 +102,12 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getPendingByIndex",
+				"name": "getPending",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getPendingCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -167,7 +121,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getTodoByIndex",
+				"name": "getTodo",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -179,29 +133,16 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getTodoCount",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "index",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "n",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
+				"name": "movePendingToTodoList",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -246,14 +187,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "createTime",
-						"type": "uint256"
+						"internalType": "bool",
+						"name": "completed",
+						"type": "bool"
 					},
 					{
-						"internalType": "bool",
-						"name": "isPending",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "moveTime",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -275,14 +216,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "createTime",
-						"type": "uint256"
+						"internalType": "bool",
+						"name": "completed",
+						"type": "bool"
 					},
 					{
-						"internalType": "bool",
-						"name": "isPending",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "moveTime",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -304,14 +245,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "createTime",
-						"type": "uint256"
+						"internalType": "bool",
+						"name": "completed",
+						"type": "bool"
 					},
 					{
-						"internalType": "bool",
-						"name": "isPending",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "moveTime",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -346,11 +287,11 @@
 	},
 	"sources": {
 		"todoListPendingCountSeconds.sol": {
-			"keccak256": "0x4831b88424954aa40894eecc472f65847dae590dc187cd4ad4e395632baf19af",
+			"keccak256": "0x1f4442350794e622d542053bfb3f39b287f9343849aa50b061347f93c8ed1887",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d28ea5ec147a6eac095a1af0e11852c17a283e4b3cb2ba225035e9cf36dff1ee",
-				"dweb:/ipfs/QmPxMRuE6bmG7vPzK7ZcH56QNNT4ppBML7sH41McQqDYQX"
+				"bzz-raw://936d4650a470077ffca16e2ddb86bf8e5194cd4fc4e5a97eed00d0cd00ab8f87",
+				"dweb:/ipfs/QmU8UtnSadqJgopeXanscH9vJtR2YcEqX8xxr59JprfxtL"
 			]
 		}
 	},

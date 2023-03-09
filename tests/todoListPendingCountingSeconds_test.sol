@@ -26,7 +26,7 @@ contract TodoListTest {
         Assert.equal(todoCount, 0, "Incorrect todo count");
     }
 
-        function testSetPending() public {
+    function testSetPending() public {
         todoList.addTodo("Buy groceries");
         todoList.setPending(0);
         uint256 pendingCount = todoList.getPendingCount();
@@ -48,7 +48,7 @@ contract TodoListTest {
         Assert.equal(count, 0, "Incorrect todo count");
     }
 
-        function testGetCompletedByIndex() public {
+    function testGetCompletedByIndex() public {
         todoList.addTodo("Buy groceries");
         todoList.setCompleted(0);
         string memory completed = todoList.getCompletedByIndex(0);
@@ -76,7 +76,11 @@ contract TodoListTest {
         todoList.setCompleted(0);
         string[] memory allCompleted = todoList.getAllCompleted();
         Assert.equal(allCompleted.length, 1, "Incorrect completed count");
-        Assert.equal(allCompleted[0], "Buy groceries", "Incorrect completed content");
+        Assert.equal(
+            allCompleted[0],
+            "Buy groceries",
+            "Incorrect completed content"
+        );
     }
 
     function testGetAllPending() public {
@@ -84,22 +88,19 @@ contract TodoListTest {
         todoList.setPending(0);
         string[] memory allPending = todoList.getAllPending();
         Assert.equal(allPending.length, 1, "Incorrect pending count");
-        Assert.equal(allPending[0], "Buy groceries", "Incorrect pending content");
+        Assert.equal(
+            allPending[0],
+            "Buy groceries",
+            "Incorrect pending content"
+        );
     }
 
     function testClearCompleted() public {
-    todoList.addTodo("Buy groceries");
-    todoList.setCompleted(0);
-    todoList.clearCompleted();
-    uint256 count = todoList.getCompletedCount();
-    Assert.equal(count, 0, "Incorrect completed count");
-}
+        todoList.addTodo("Buy groceries");
+        todoList.setCompleted(0);
+        todoList.clearCompleted();
+        uint256 count = todoList.getCompletedCount();
+        Assert.equal(count, 0, "Incorrect completed count");
+    }
 
-function testClearPending() public {
-    todoList.addTodo("Buy groceries");
-    todoList.setPending(0);
-    todoList.clearPending(0);
-    uint256 count = todoList.getPendingCount();
-    Assert.equal(count, 0, "Incorrect pending count");
-}
 }

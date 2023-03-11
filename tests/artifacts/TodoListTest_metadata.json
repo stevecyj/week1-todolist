@@ -14,41 +14,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "testAddTodo",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testClearCompleted",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testDeleteTodoByIndex",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testGetAllCompleted",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testGetAllPending",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "testGetAllTodo",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -56,35 +21,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "testGetCompletedByIndex",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testGetPendingByIndex",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testGetTodoByIndex",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testSetCompleted",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testSetPending",
+				"name": "testMovePendingToTodos",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -118,19 +55,19 @@
 	},
 	"sources": {
 		"localhost/tests/todoListPendingCountingSeconds_test.sol": {
-			"keccak256": "0xf7ca15a97d3d2e5611102b57b2571820025331bb4a58d0c25c015302e5e6c8cf",
+			"keccak256": "0x11121964893150ed35b60aace2b86cde9c3ef6c9ad5982f7ee68c003ee901727",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://df0aec3119aeba1d6caddfac51d953962898791abc0fb2d8d520b7abd7deb203",
-				"dweb:/ipfs/QmVhSTG3vcuumwaWVumtyoKo8NhQJ1tgy836cxaYpAvZA9"
+				"bzz-raw://cf5fa31ced08b72e805d0972976c890187cae34a0b651767eb237fa49c8dc345",
+				"dweb:/ipfs/QmZD6pV3e8svehFZJWMpMJLtzUKjmxLaod2LPw3N5GhoSh"
 			]
 		},
 		"localhost/todoListPendingCountSeconds.sol": {
-			"keccak256": "0x4831b88424954aa40894eecc472f65847dae590dc187cd4ad4e395632baf19af",
+			"keccak256": "0xbcdd75648382326b6f18cc9e19439724845e488246764698fc4c22b375be721a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d28ea5ec147a6eac095a1af0e11852c17a283e4b3cb2ba225035e9cf36dff1ee",
-				"dweb:/ipfs/QmPxMRuE6bmG7vPzK7ZcH56QNNT4ppBML7sH41McQqDYQX"
+				"bzz-raw://479471eba4c9d1a3824da89b75a9a8920ebca36812d73fbc7da89709b53a287d",
+				"dweb:/ipfs/Qme14F7EKkWgniA3zX8kuACRtvzLGUApiy2kKsdS7ErR5M"
 			]
 		},
 		"remix_tests.sol": {

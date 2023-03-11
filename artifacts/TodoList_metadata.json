@@ -14,11 +14,37 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "content",
+						"name": "todo",
 						"type": "string"
 					}
 				],
 				"name": "addTodo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "canMoveToTodos",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "clearCompleted",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -41,9 +67,36 @@
 				"name": "getAllCompleted",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPending",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pendingTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TodoList.TodoItem[]",
 						"name": "",
-						"type": "string[]"
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -54,9 +107,36 @@
 				"name": "getAllPending",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPending",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pendingTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TodoList.TodoItem[]",
 						"name": "",
-						"type": "string[]"
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -67,9 +147,36 @@
 				"name": "getAllTodo",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPending",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pendingTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TodoList.TodoItem[]",
 						"name": "",
-						"type": "string[]"
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -86,9 +193,49 @@
 				"name": "getCompleted",
 				"outputs": [
 					{
-						"internalType": "string",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPending",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pendingTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TodoList.TodoItem",
 						"name": "",
-						"type": "string"
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCompletedCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -105,9 +252,49 @@
 				"name": "getPending",
 				"outputs": [
 					{
-						"internalType": "string",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPending",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pendingTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TodoList.TodoItem",
 						"name": "",
-						"type": "string"
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPendingCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -124,9 +311,49 @@
 				"name": "getTodo",
 				"outputs": [
 					{
-						"internalType": "string",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPending",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pendingTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TodoList.TodoItem",
 						"name": "",
-						"type": "string"
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTodoCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -140,9 +367,22 @@
 						"type": "uint256"
 					}
 				],
-				"name": "movePendingToTodoList",
+				"name": "movePendingToTodos",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "n",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -183,8 +423,13 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "content",
+						"name": "name",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createdTime",
+						"type": "uint256"
 					},
 					{
 						"internalType": "bool",
@@ -192,8 +437,13 @@
 						"type": "bool"
 					},
 					{
+						"internalType": "bool",
+						"name": "isPending",
+						"type": "bool"
+					},
+					{
 						"internalType": "uint256",
-						"name": "moveTime",
+						"name": "pendingTime",
 						"type": "uint256"
 					}
 				],
@@ -212,8 +462,13 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "content",
+						"name": "name",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createdTime",
+						"type": "uint256"
 					},
 					{
 						"internalType": "bool",
@@ -221,8 +476,13 @@
 						"type": "bool"
 					},
 					{
+						"internalType": "bool",
+						"name": "isPending",
+						"type": "bool"
+					},
+					{
 						"internalType": "uint256",
-						"name": "moveTime",
+						"name": "pendingTime",
 						"type": "uint256"
 					}
 				],
@@ -241,8 +501,13 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "content",
+						"name": "name",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createdTime",
+						"type": "uint256"
 					},
 					{
 						"internalType": "bool",
@@ -250,8 +515,13 @@
 						"type": "bool"
 					},
 					{
+						"internalType": "bool",
+						"name": "isPending",
+						"type": "bool"
+					},
+					{
 						"internalType": "uint256",
-						"name": "moveTime",
+						"name": "pendingTime",
 						"type": "uint256"
 					}
 				],
@@ -287,11 +557,11 @@
 	},
 	"sources": {
 		"todoListPendingCountSeconds.sol": {
-			"keccak256": "0x1f4442350794e622d542053bfb3f39b287f9343849aa50b061347f93c8ed1887",
+			"keccak256": "0xbcdd75648382326b6f18cc9e19439724845e488246764698fc4c22b375be721a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://936d4650a470077ffca16e2ddb86bf8e5194cd4fc4e5a97eed00d0cd00ab8f87",
-				"dweb:/ipfs/QmU8UtnSadqJgopeXanscH9vJtR2YcEqX8xxr59JprfxtL"
+				"bzz-raw://479471eba4c9d1a3824da89b75a9a8920ebca36812d73fbc7da89709b53a287d",
+				"dweb:/ipfs/Qme14F7EKkWgniA3zX8kuACRtvzLGUApiy2kKsdS7ErR5M"
 			]
 		}
 	},

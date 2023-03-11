@@ -12,95 +12,132 @@ contract TodoListTest {
     }
 
     function testAddTodo() public {
-        todoList.addTodo("Buy groceries");
-        uint256 count = todoList.getTodoCount();
-        Assert.equal(count, 1, "Incorrect todo count");
+        string memory todo = "buy milk";
+        todoList.addTodo(todo);
+
+        TodoList.TodoItem memory addedTodo = todoList.getTodo(0);
+        Assert.equal(addedTodo.name, todo, "Todo name should be 'buy milk'");
+        Assert.equal(addedTodo.completed, false, "Todo should be marked as incomplete");
+        Assert.equal(addedTodo.isPending, false, "Todo should not be marked as pending");
+        Assert.equal(addedTodo.pendingTime, 0, "Todo pending time should be zero");
+        Assert.equal(addedTodo.createdTime, block.timestamp, "Todo creation time should be block.timestamp");
     }
 
     function testSetCompleted() public {
-        todoList.addTodo("Buy groceries");
+        string memory todo = "buy milk";
+        todoList.addTodo(todo);
         todoList.setCompleted(0);
-        uint256 completedCount = todoList.getCompletedCount();
+
+        TodoList.TodoItem memory completedTodo = todoList.getCompleted(0);
+        Assert.equal(completedTodo.name, todo, "Completed todo name should be 'buy milk'");
+        Assert.equal(completedTodo.completed, true, "Completed todo should be marked as complete");
+        Assert.equal(completedTodo.isPending, false, "Completed todo should not be marked as pending");
+        Assert.equal(completedTodo.pendingTime, 0, "Completed todo pending time should be zero");
+        Assert.equal(completedTodo.createdTime, block.timestamp, "Completed todo creation time should be block.timestamp");
+
         uint256 todoCount = todoList.getTodoCount();
-        Assert.equal(completedCount, 1, "Incorrect completed count");
-        Assert.equal(todoCount, 0, "Incorrect todo count");
+        Assert.equal(todoCount, 0, "Todo count should be zero after setting todo as completed");
     }
 
     function testSetPending() public {
-        todoList.addTodo("Buy groceries");
+        string memory todo = "buy milk";
+        todoList.addTodo(todo);
         todoList.setPending(0);
-        uint256 pendingCount = todoList.getPendingCount();
+
+        TodoList.TodoItem memory pendingTodo = todoList.getPending(0);
+        Assert.equal(pendingTodo.name, todo, "Pending todo name should be 'buy milk'");
+        Assert.equal(pendingTodo.completed, false, "Pending todo should be marked as incomplete");
+        Assert.equal(pendingTodo.isPending, true, "Pending todo should be marked as pending");
+        Assert.equal(pendingTodo.pendingTime, block.timestamp, "Pending todo pending time should be block.timestamp");
+        Assert.equal(pendingTodo.createdTime, block.timestamp, "Pending todo creation time should be block.timestamp");
+
         uint256 todoCount = todoList.getTodoCount();
-        Assert.equal(pendingCount, 1, "Incorrect pending count");
-        Assert.equal(todoCount, 0, "Incorrect todo count");
+        Assert.equal(todoCount, 0, "Todo count should be zero after setting todo as pending");
     }
 
-    function testGetTodoByIndex() public {
-        todoList.addTodo("Buy groceries");
-        string memory todo = todoList.getTodoByIndex(0);
-        Assert.equal(todo, "Buy groceries", "Incorrect todo content");
-    }
+    function testDeleteTodo() public {
+        string memory todo = "buy milk";
+        todoList.addTodo(todo);
+        todoList.deleteTodo(0);
 
-    function testDeleteTodoByIndex() public {
-        todoList.addTodo("Buy groceries");
-        todoList.deleteTodoByIndex(0);
-        uint256 count = todoList.getTodoCount();
-        Assert.equal(count, 0, "Incorrect todo count");
-    }
-
-    function testGetCompletedByIndex() public {
-        todoList.addTodo("Buy groceries");
-        todoList.setCompleted(0);
-        string memory completed = todoList.getCompletedByIndex(0);
-        Assert.equal(completed, "Buy groceries", "Incorrect completed content");
-    }
-
-    function testGetPendingByIndex() public {
-        todoList.addTodo("Buy groceries");
-        todoList.setPending(0);
-        string memory pending = todoList.getPendingByIndex(0);
-        Assert.equal(pending, "Buy groceries", "Incorrect pending content");
-    }
-
-    function testGetAllTodo() public {
-        todoList.addTodo("Buy groceries");
-        todoList.addTodo("Walk the dog");
-        string[] memory allTodo = todoList.getAllTodo();
-        Assert.equal(allTodo.length, 2, "Incorrect todo count");
-        Assert.equal(allTodo[0], "Buy groceries", "Incorrect todo content");
-        Assert.equal(allTodo[1], "Walk the dog", "Incorrect todo content");
-    }
-
-    function testGetAllCompleted() public {
-        todoList.addTodo("Buy groceries");
-        todoList.setCompleted(0);
-        string[] memory allCompleted = todoList.getAllCompleted();
-        Assert.equal(allCompleted.length, 1, "Incorrect completed count");
-        Assert.equal(
-            allCompleted[0],
-            "Buy groceries",
-            "Incorrect completed content"
-        );
-    }
-
-    function testGetAllPending() public {
-        todoList.addTodo("Buy groceries");
-        todoList.setPending(0);
-        string[] memory allPending = todoList.getAllPending();
-        Assert.equal(allPending.length, 1, "Incorrect pending count");
-        Assert.equal(
-            allPending[0],
-            "Buy groceries",
-            "Incorrect pending content"
-        );
+        uint256 todoCount = todoList.getTodoCount();
+        Assert.equal(todoCount, 0, "Todo count should be zero after deleting the only todo");
     }
 
     function testClearCompleted() public {
-        todoList.addTodo("Buy groceries");
-        todoList.setCompleted(0);
+        string memory todo = "buy milk";
+        todoList.addTodo(todo);todoList.setCompleted(0);
         todoList.clearCompleted();
-        uint256 count = todoList.getCompletedCount();
-        Assert.equal(count, 0, "Incorrect completed count");
+
+        uint256 completedCount = todoList.getCompletedCount();
+        Assert.equal(completedCount, 0, "Completed todo count should be zero after clearing completed todos");
     }
 
+    function testGetAllTodo() public {
+        string memory todo1 = "buy milk";
+        string memory todo2 = "walk the dog";
+        todoList.addTodo(todo1);
+        todoList.addTodo(todo2);
+
+        TodoList.TodoItem[] memory todos = todoList.getAllTodo();
+        Assert.equal(todos.length, 2, "Todo count should be 2");
+        Assert.equal(todos[0].name, todo1, "First todo should be 'buy milk'");
+        Assert.equal(todos[1].name, todo2, "Second todo should be 'walk the dog'");
+    }
+
+    function testGetAllCompleted() public {
+        string memory todo1 = "buy milk";
+        string memory todo2 = "walk the dog";
+        todoList.addTodo(todo1);
+        todoList.addTodo(todo2);
+        todoList.setCompleted(0);
+
+        TodoList.TodoItem[] memory completedTodos = todoList.getAllCompleted();
+        Assert.equal(completedTodos.length, 1, "Completed todo count should be 1");
+        Assert.equal(completedTodos[0].name, todo1, "Completed todo should be 'buy milk'");
+    }
+
+    function testGetAllPending() public {
+        string memory todo1 = "buy milk";
+        string memory todo2 = "walk the dog";
+        todoList.addTodo(todo1);
+        todoList.addTodo(todo2);
+        todoList.setPending(0);
+
+        TodoList.TodoItem[] memory pendingTodos = todoList.getAllPending();
+        Assert.equal(pendingTodos.length, 1, "Pending todo count should be 1");
+        Assert.equal(pendingTodos[0].name, todo1, "Pending todo should be 'buy milk'");
+    }
+
+    function testGetTodoCount() public {
+        string memory todo1 = "buy milk";
+        string memory todo2 = "walk the dog";
+        todoList.addTodo(todo1);
+        todoList.addTodo(todo2);
+
+        uint256 todoCount = todoList.getTodoCount();
+        Assert.equal(todoCount, 2, "Todo count should be 2");
+    }
+
+    function testGetCompletedCount() public {
+        string memory todo1 = "buy milk";
+        string memory todo2 = "walk the dog";
+        todoList.addTodo(todo1);
+        todoList.addTodo(todo2);
+        todoList.setCompleted(0);
+
+        uint256 completedCount = todoList.getCompletedCount();
+        Assert.equal(completedCount, 1, "Completed todo count should be 1");
+    }
+
+    function testGetPendingCount() public {
+        string memory todo1 = "buy milk";
+        string memory todo2 = "walk the dog";
+        todoList.addTodo(todo1);
+        todoList.addTodo(todo2);
+        todoList.setPending(0);
+
+        uint256 pendingCount = todoList.getPendingCount();
+        Assert.equal(pendingCount, 1, "Pending todo count should be 1");
+    }
 }
